@@ -1,0 +1,15 @@
+// Execute this mixin with breakpoint key as argument
+@mixin widerThan($slug) {
+	$error: 1;
+	@each $breakpoint-slug, $width in $breakpoints {
+		@if $breakpoint-slug == $slug {
+			$error: 0;
+			@media (min-width: #{$width}) {
+				@content;
+			}
+		}
+	}
+	@if $error == 1 {
+		@error 'Invalid breakpoint slug: #{$slug}';
+	}
+}

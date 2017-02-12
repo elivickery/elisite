@@ -1,0 +1,55 @@
+a {
+	color: $linkcolor;
+	font-weight:bold;
+
+	&.button {
+		min-width:0px;
+		text-align:center;
+		font-size:18px;
+		border:1px solid $highlightcolor;
+		color: $highlightcolor;
+		padding: 20px 45px;
+		font-weight:bold;
+		display:inline-block;
+		border-radius:40px;
+    	transition: background-color 300ms ease-out;
+
+    	@include widerThan(medium) {
+    		min-width:265px;
+    	}
+
+    	&:hover {
+    		background-color: $highlightcolor;
+    		color:#fff;
+    	}
+	}
+
+	article & {
+		color: #00a6b2;
+
+		&:hover { color: #A2D6DD; }
+	}
+}
+
+
+
+#submit {
+		min-width:0px;
+		text-align:center;
+		font-size:18px;
+		background:none;
+		border:1px solid $highlightcolor;
+		color: $highlightcolor;
+		padding: 14px 35px;
+		font-weight:bold;
+		display:inline-block;
+		border-radius:40px;
+    	transition: background-color 300ms ease-out;
+    	margin-top:20px;
+
+
+    	&:hover {
+    		background-color: $highlightcolor;
+    		color:#fff;
+    	}
+	}

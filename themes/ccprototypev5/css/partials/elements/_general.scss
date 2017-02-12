@@ -1,0 +1,452 @@
+body, html {
+	background:#fff;
+	color:#333333;
+}
+
+body {	
+	overflow-x:hidden;
+}
+
+body, #page, #header, #main, #footer, .block {
+	position: relative;
+}
+
+// WordPress admin bar
+#wpadminbar {
+	position: fixed!important;
+}
+
+// Get rid of that little bit of space below images
+img {
+	display: block;
+
+	article & {
+		display: inline-block;
+	}
+}
+
+// WordPress alignments
+.aligncenter, .alignleft, .alignright {
+	display: block;
+	margin: 0 auto;
+	margin-bottom: $paragraph-spacing;
+}
+@include widerThan(medium) {
+	.alignleft {
+		clear: left;
+		float: left;
+		margin: 0.3em 1em 0.5em 0;
+	}
+	.alignright {
+		clear: right;
+		float: right;
+		margin: 0.3em 0 0.5em 1em;
+	}
+}
+
+// Utilities
+.full-width {
+  width: 100%;
+  box-sizing: border-box;
+}
+.max-full-width {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.hide {
+  display: none;
+}
+.invisible {
+  visibility: hidden;
+}
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.vertical-align {
+	display: table;
+	table-layout: fixed;
+
+	& > div {
+		display: table-cell;
+		vertical-align: middle;
+	}
+}
+.post-edit-link {
+	display: block;
+	margin: 30px 0 0 0;
+	text-align:left;
+}
+
+#footercta {
+	background:$lightbackground;
+	text-align:center;
+	padding-top:$block-spacing*1.5;
+	padding-bottom:$block-spacing*1.5;
+
+	h2 {
+		margin-bottom:30px;	
+		font-size:30px;
+
+		@include widerThan(medium) {
+			font-size:36px;
+		}
+	}
+
+	p {
+		font-size:18px;
+		margin-bottom:40px;
+
+		@include widerThan(medium) {
+			font-size:24px;
+		}
+	}
+}
+
+
+
+.entry-content {
+	background: $lightbackground;
+
+	h2 {
+		margin-bottom:30px;
+	}
+}
+
+#header {
+	background:#000!important;
+	text-align:center;
+	min-height:325px;
+
+	#logolink {
+		position:relative;
+	}
+
+	#logo {
+		position:absolute;
+		opacity:1;
+		transition: opacity .25s ease-in-out;
+	   -moz-transition: opacity .25s ease-in-out;
+	   -webkit-transition: opacity .25s ease-in-out;
+	}
+
+	#logo_reverse {
+		opacity:0;
+		position:absolute;
+		transition: opacity .25s ease-in-out;
+		-moz-transition: opacity .25s ease-in-out;
+		-webkit-transition: opacity .25s ease-in-out;
+	}
+
+	.upper.sticky {
+	
+	    position: fixed;
+	    width: 100%;
+	    top: 0;
+	    background: rgba(250,250,250,0.9);
+	    height: 95px;
+
+		#logo {
+			opacity:0;
+		}
+
+		#logo_reverse {
+			opacity:1;
+		}
+	}
+
+	.headerlogo {
+		max-width: 800px;
+    	display: inline-block;
+	}
+
+	&.nocontent {
+		margin-bottom:45px;
+	}
+
+	.logo {
+		max-width:200px;
+		float:left;
+	}
+
+	.headercontent {
+
+		margin-top:50px;
+
+		p {
+			font-size:18px;
+			text-transform:uppercase;
+			letter-spacing:1px;
+		}
+
+		.home & {
+			margin-top:50px;
+
+			@include widerThan(medium) {
+				margin-top:50px;
+			}
+		}
+	}
+
+	.home & {
+		min-height:800px;
+	}
+
+	.backstretch {
+
+		img {
+			opacity:0.5;
+		}
+	}
+
+	h1, p, a {
+		color:#fff!important;
+	}
+
+	.button {
+		border:1px solid #fff;
+
+		&:hover {
+    		background-color: #fff;
+    		color:#000!important;
+    	}
+	}
+}
+
+
+.row {
+
+	&.logos {
+		margin:40px 0 0 0;
+	}
+
+	&.maincontent {
+		background:$lightbackground;
+	}
+
+	&.section {
+		padding:58px 0;
+		text-align:center;
+	}
+	&.rel {
+		position: relative;
+		height: 223px;
+		.col-lg-4 {
+			height: 100%;
+		}
+	}
+
+	&#testimonials {
+		background: $darkbackground;
+		color:#fff;
+	}
+
+
+	.item {
+		text-align:center;
+		padding-top:100px;
+		padding-bottom:100px;
+		margin-bottom:10px;
+	}
+
+
+	&#companies {
+
+		img {
+			display:inline-block;
+			margin: 0 20px 50px;
+		}
+	}
+
+	.blogwrap {
+		width: 100%;
+    	max-width: 70%;
+    	margin: 0 auto;
+	}
+
+
+	&#testimonials {
+
+		h3 {
+			margin-bottom:45px;
+		}
+
+		.item {
+			margin-bottom:30px;
+		
+
+		.testimonial {
+			// background:#fefefe;
+			// color:#333333;
+			text-align:left;
+			font-size:18px;
+			padding:25px 17px 75px 17px;
+			// box-shadow: 3px 2px 7px 0px rgba(0,0,0,0.54);
+			color:#fff;
+
+			p {
+				&:before {
+					content: '“';
+					// color:#b6cccd;
+					color:#fff;
+					font-size:36px;
+					line-height:.5;
+					margin-right:5px;
+				}
+
+				&:after {
+					content: '”';
+					// color:#b6cccd;
+					color:#fff;
+					font-size:36px;
+					line-height:.5;
+					margin-left:5px;
+				}
+			}
+		}
+
+	}
+
+		.creditwrap {
+			display:table;
+
+
+			.image {
+
+			    display: inline-block;
+			    width: 170px;
+			    height: 170px;
+			    border-radius: 50%;
+			    background-size: cover!important;
+			    min-width: 80px;
+			    min-height: 80px;
+			    margin: -30px 10px 0 10px;
+			    box-shadow: 0px 3px 20px -6px rgba(0, 0, 0, 0.54);
+
+			}
+
+			.credit {
+				display:table-cell;
+				vertical-align:middle;
+				font-size:18px;
+				text-align:left;
+				padding-top:20px;
+
+				.name {
+					font-weight:600;
+					margin-bottom:10px;
+					float:left;
+					width:100%;
+				}
+
+			}
+
+
+		}
+
+	}
+
+
+
+}
+
+
+.preview {
+
+	text-align:center;
+	margin-bottom:0!important;
+
+	img {
+		margin-bottom:30px;
+	}
+
+	header {
+
+		margin-bottom: 20px;
+
+		a {
+		    font-size: 30px;
+		    font-weight: 600;
+		    color: #00a6b2;
+		    display:block;
+		}
+
+	}
+}
+
+
+.wp-pagenavi {
+	text-align:center;
+	margin-bottom:$block-spacing;
+
+	a, span {
+		border:none;
+	}
+}
+
+#toTop {
+	position: absolute;
+	left: 149px;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	bottom: 0;
+	white-space: nowrap;
+	a {
+		span {
+			font-family: "inq";
+			margin-left: 10px;
+			height: 30px;
+			vertical-align: middle;
+		}
+	}
+}
+@media(max-width: $screen-lg) {
+	.row.rel {
+		height: 243px;
+	}
+}
+@media(max-width: $screen-sm) {
+	#toTop {
+		left: auto;
+		right: 30px;
+		-webkit-transform: none;
+		transform: none;
+	}
+	#footer {
+		.button {
+			float: none;
+			width: 200px;
+			margin: 0 auto;
+			display: block;
+		}
+	}
+	
+
+}
+@media(max-width: $screen-xs) {
+	.row.rel {
+		height: auto;
+		float: left;
+		.col-xs-12 {
+			margin-bottom: 20px;
+		}
+	}
+	#toTop {
+		position: relative;
+		left: auto;
+		bottom: auto;
+		right: auto;
+		-webkit-transform: none;
+		transform: none;
+		margin-top: 20px;
+		float: right;
+
+	}
+}

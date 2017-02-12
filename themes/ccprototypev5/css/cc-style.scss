@@ -1,0 +1,28 @@
+// Frameworks and resets
+@import "partials/bootstrap";
+@import "partials/normalize";
+
+// Variables and mixins
+@import "partials/variables";
+@import "partials/mixins";
+
+// Elements
+@import "partials/elements/typography";
+@import "partials/elements/general";
+@import "partials/elements/forms";
+@import "partials/elements/buttons";
+@import "partials/elements/building-blocks";
+
+// WordPress Templates
+@import "partials/templates/menu";
+@import "partials/templates/header";
+@import "partials/templates/footer";
+@import "partials/templates/sidebar";
+
+// Fonts
+@import "partials/fonts/prototype";
+@import "partials/fonts/inq";
+
+// JavaScript plugins
+@import "partials/plugins/featherlight.min";
+@import "partials/plugins/slick";

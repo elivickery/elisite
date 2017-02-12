@@ -1,0 +1,174 @@
+#main-menu, .navbar-toggle {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+#main, #footer {
+	transition: all .3s ease-in-out;
+}
+.hamburger {
+	cursor: pointer;
+	float: right;
+	height: 45px;
+	position: relative;
+	width: 45px;
+	z-index: 999;
+
+	.bar {
+		background-color: #fff;
+		height: 8px;
+		margin-top: 5px;
+		transition: all 0.3s ease-in-out;
+		width: 100%;
+	}
+}
+.sub-menu {
+	li.duplicate-link {
+		@include widerThan(large) {
+			display: none!important;
+		}
+	}
+}
+#main-menu {
+	display: none;
+	position: relative;
+	z-index: 800;
+	float:right;
+  	font-family: "open-sans",sans-serif;
+	font-weight:bold;
+	margin-top:35px;
+
+
+	.fullscreen-only {
+		display: none;
+	}
+	
+	// Dropdown menu styles
+	@include widerThan(medium) {
+		display: block;
+
+		li {
+			display: inline-block;
+			position: relative;
+			margin:0 15px;
+
+			&:last-child {
+				margin-right:0;
+			}
+
+			a {
+				font-size:18px;
+
+				.fa {
+					font-size:22px;
+				}			
+
+			}
+
+			.sub-menu {
+				clip: auto;
+				display: none;
+				left: 0;
+				position: absolute;
+				top: 100%;
+				white-space: nowrap;
+				width: auto;
+				padding-top:10px;
+				transition: height 0.2s ease-in-out;
+
+				&.reverse {
+					left: auto;
+					right: 0;
+				}
+
+				a {
+					font-weight:normal;
+					font-size:15px;
+				}
+				
+				li:not(.fullscreen-only) {
+					display: block;
+					text-align:left;
+					margin:0;
+
+
+					.sub-menu {
+						left: 100%;
+						top: 0;
+						padding-left:10px;
+						padding-top:0;
+					}
+				}
+			}
+			&:hover {
+				& > .sub-menu {
+					display: inherit;
+				}
+			}
+		}
+	}
+}
+
+.fullscreen-menu {
+	#main, #footer {
+		filter: blur(3px);
+	}
+	.bar {
+		background-color: white;
+
+		&.top {
+			transform-origin: 10% 40%;
+			transform: rotate(45deg);
+		}
+		&.middle {
+			background-color: transparent;
+		}
+		&.bottom {
+			transform-origin: 10% 40%;
+			transform: rotate(-45deg);
+		}
+	}
+	#main-menu {
+		background-color: rgba(0, 0, 0, 0.85);
+		color: white;
+		display: table;
+		height: 100%;
+		left: 0;
+		opacity: 1;
+		position: fixed;
+		text-align: center;
+		top: 0;
+		width: 100%;
+		z-index: 900;
+		
+		.fullscreen-only {
+			display: inherit;
+		}
+
+		& > ul {
+			display: table-cell;
+			position: relative;
+			vertical-align: middle;
+
+			li {
+				display: block;
+				list-style: none;
+				margin-bottom: 3.5%;	
+
+				.sub-menu {
+					display: none;
+					padding-top: 3.5%;
+					position: static;
+					transition: height 0.3s ease-in-out;
+
+					&.open {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}

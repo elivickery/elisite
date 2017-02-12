@@ -1,0 +1,170 @@
+.building-block {
+
+	float:left;
+	width:100%;
+	clear:both;
+
+	h2.title {
+		margin-bottom:$block-spacing;
+	}
+	&:not(:last-of-type) {
+		// padding-bottom: $block-spacing;
+		padding-top:$block-spacing;
+		// margin-bottom: $block-spacing;
+	}
+
+	// &:first-of-type {
+	// 	padding-top:0;
+	// }
+
+	&:last-of-type {
+		padding-bottom: $block-spacing;
+		padding-top:$block-spacing;
+	}
+
+	.item:not(:last-of-type) {
+		margin-bottom: $block-spacing;
+	}
+	.image.column, .image.columns {
+		margin-bottom: $block-spacing*0.5;
+
+		@include widerThan(medium) {
+			margin-bottom: 0;
+		}
+	}
+
+	&.bb-basic-text {
+
+
+		&.highlighted {
+				padding-top:$block-spacing*1.5;
+				padding-bottom:$block-spacing*1.5;
+				background:$darkbackground;
+				margin-bottom:45px;
+				margin-top:0;
+
+				* {
+					color:#fff!important;
+				}
+
+				a {
+					color: $linkcolor!important;
+					font-weight:bold!important;
+				}
+			}
+
+
+	}
+
+	&.bb-button {
+		text-align:center;
+
+		a.button {
+			display:inline-block;
+		}
+	}
+
+	&.bb-multicolumns {
+		margin-bottom:$block-spacing;
+		.multicolumn {
+			margin-bottom: $paragraph-spacing;
+		}
+	}
+
+	&.bb-gallery {
+
+		.row {
+			margin-bottom:30px;
+		}
+
+		.col-lg-3 {
+			text-align:center;
+
+			img {
+				display:inline-block;
+			}
+		}
+	}
+
+	&.bb-item-list {
+
+		.row {
+			margin-bottom:$block-spacing*2;
+		}
+
+		.sub-title {
+			text-align:left;
+			font-size:30px;
+			font-weight:600;
+			color:$titlecolor;
+			margin-bottom:11px;
+
+		}
+	}
+
+	&.bb-image-text {
+
+		.row {
+
+			text-align:left;
+			margin-bottom:$block-spacing*1.5;
+
+
+			&.highlighted {
+				padding-top:$block-spacing*1.5;
+				padding-bottom:$block-spacing*1.5;
+				background:$darkbackground;
+				margin-bottom:45px;
+				margin-top:-($block-spacing*1.5);
+
+				* {
+					color:#fff!important;
+				}
+
+				a {
+					color: $linkcolor!important;
+					font-weight:bold!important;
+				}
+			}
+			
+
+			.sub-title {
+				text-align:left;
+				font-size:30px;
+				font-weight:600;
+				color:$titlecolor;
+				margin-bottom:11px;
+			}
+
+			.sub-sub-title {
+				font-size:24px;
+				font-weight:600;
+			}
+
+			p {
+				font-size:16px;
+			}
+
+			@include widerThan(large) {
+				.image, .text {
+					display: table-cell;
+					float: none;
+					vertical-align: top;
+				}
+			}
+			.image {
+				text-align:center;
+
+				.imagediv {
+					width: 100%;
+					padding-bottom: 100%;
+    				border-radius: 50%;
+    				background-size:cover!important;
+    				display:inline-block;
+    				float:none;
+    				margin-bottom:40px;
+				}
+			}
+		}
+	}
+}
